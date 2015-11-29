@@ -8,6 +8,12 @@ exec tclsh "$0" ${1+"$@"}
 #exec passwd tcltestuser
 set status 0
 
+puts -nonewline "Enter your name: "
+flush stdout
+set name [gets stdin]
+
+puts "Hello $name"
+
 set un tcltestuser
 
 catch {exec id $un} results options
